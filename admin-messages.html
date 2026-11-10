@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages & Support | Admin | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="dashboard.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge admin">Admin</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Main Menu</div>
+                <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+                <a href="admin-ai-tools.html"><i class="fas fa-robot"></i> AI Tools</a>
+                <a href="admin-projects.html"><i class="fas fa-folder"></i> Projects</a>
+                <a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a>
+
+                <div class="sidebar-menu-category">Communication</div>
+                <a href="admin-messages.html" class="active"><i class="fas fa-comments"></i> Messages</a>
+                <a href="admin-notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+
+                <div class="sidebar-menu-category">Administration</div>
+                <a href="admin-profile.html"><i class="fas fa-user-shield"></i> Profile</a>
+                <a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="dashboard.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>Team & Client Messages, <span class="dynamic-user-name">Admin</span> &#128075;</h1>
+                        <p>Enterprise client communications, technical support queries, and direct developer channels</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-comment-dots"></i> 3 Unread</span>
+                    <a href="admin-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">A</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">Admin</h4>
+                            <p id="userRoleHeader">Super Administrator</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- MESSAGES SPLIT CONTAINER -->
+            <div class="dash-grid-2" style="align-items:stretch;">
+                
+                <!-- Left: Conversations List -->
+                <div class="dash-card" style="padding:18px;">
+                    <div style="margin-bottom:14px;position:relative;">
+                        <i class="fas fa-search" style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;"></i>
+                        <input type="text" placeholder="Search conversations..." style="width:100%;padding:10px 14px 10px 36px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;outline:none;font-size:13px;font-family:'Outfit',sans-serif;">
+                    </div>
+
+                    <div style="display:flex;gap:6px;margin-bottom:14px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:10px;">
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" style="background:rgba(20,184,166,0.15);color:var(--secondary);border-color:var(--secondary);">All (18)</button>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm">Unread (3)</button>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm">VIP Clients</button>
+                    </div>
+
+                    <!-- Conversation items -->
+                    <div style="display:flex;flex-direction:column;gap:8px;">
+                        <!-- Item 1 (Selected) -->
+                        <div style="display:flex;gap:12px;padding:12px;border-radius:12px;background:rgba(20,184,166,0.1);border:1px solid var(--secondary);cursor:pointer;">
+                            <div style="width:40px;height:40px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;">
+                                D
+                            </div>
+                            <div style="flex:1;overflow:hidden;">
+                                <div style="display:flex;justify-content:space-between;margin-bottom:2px;">
+                                    <h4 style="font-size:14px;font-weight:700;margin:0;color:#fff;">Dr. David Chen</h4>
+                                    <small style="color:var(--secondary);font-size:11px;">10:42 AM</small>
+                                </div>
+                                <p style="font-size:12px;color:var(--muted);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                    We evaluated the fine-tuned BioGenom model on patient cohort B...
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div style="display:flex;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);cursor:pointer;">
+                            <div style="width:40px;height:40px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;">
+                                S
+                            </div>
+                            <div style="flex:1;overflow:hidden;">
+                                <div style="display:flex;justify-content:space-between;margin-bottom:2px;">
+                                    <h4 style="font-size:14px;font-weight:700;margin:0;color:#fff;">Sarah Sterling</h4>
+                                    <small style="color:var(--muted);font-size:11px;">Yesterday</small>
+                                </div>
+                                <p style="font-size:12px;color:var(--muted);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                    Inquiry regarding our Q4 dedicated GPU cluster upgrade quota.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div style="display:flex;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);cursor:pointer;">
+                            <div style="width:40px;height:40px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;">
+                                M
+                            </div>
+                            <div style="flex:1;overflow:hidden;">
+                                <div style="display:flex;justify-content:space-between;margin-bottom:2px;">
+                                    <h4 style="font-size:14px;font-weight:700;margin:0;color:#fff;">Marcus Vance</h4>
+                                    <small style="color:var(--muted);font-size:11px;">2 days ago</small>
+                                </div>
+                                <p style="font-size:12px;color:var(--muted);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                    The automated latency regression test passed successfully.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div style="display:flex;gap:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);cursor:pointer;">
+                            <div style="width:40px;height:40px;border-radius:50%;background:#a855f7;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;">
+                                E
+                            </div>
+                            <div style="flex:1;overflow:hidden;">
+                                <div style="display:flex;justify-content:space-between;margin-bottom:2px;">
+                                    <h4 style="font-size:14px;font-weight:700;margin:0;color:#fff;">Elena Rostova</h4>
+                                    <small style="color:var(--muted);font-size:11px;">3 days ago</small>
+                                </div>
+                                <p style="font-size:12px;color:var(--muted);margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                    Signed enterprise contract received for AlphaGen AI lab.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Active Chat Stream -->
+                <div class="dash-card" style="display:flex;flex-direction:column;justify-content:space-between;min-height:500px;">
+                    <!-- Chat Header -->
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div style="width:42px;height:42px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;">
+                                D
+                            </div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">Dr. David Chen</h3>
+                                <small style="color:#10b981;"><i class="fas fa-circle" style="font-size:7px;"></i> Active Now â€¢ AlphaCare Health</small>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm"><i class="fas fa-phone"></i></button>
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm"><i class="fas fa-video"></i></button>
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm"><i class="fas fa-ellipsis-v"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Message Body -->
+                    <div id="chatMessageStream" style="flex:1;padding:20px 0;overflow-y:auto;display:flex;flex-direction:column;gap:16px;">
+                        <!-- Incoming -->
+                        <div style="display:flex;gap:10px;max-width:75%;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">
+                                D
+                            </div>
+                            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:14px;border-top-left-radius:2px;">
+                                <p style="font-size:13.5px;color:#fff;margin:0 0 4px;line-height:1.5;">
+                                    Hello Admin! We evaluated the fine-tuned BioGenom model on patient cohort B yesterday. The precision jumped to 98.6%. Can we provision 2 additional inference workers?
+                                </p>
+                                <small style="color:var(--muted);font-size:11px;">10:42 AM</small>
+                            </div>
+                        </div>
+
+                        <!-- Outgoing -->
+                        <div style="display:flex;gap:10px;max-width:75%;align-self:flex-end;flex-direction:row-reverse;">
+                            <div class="user-avatar-initial" style="width:32px;height:32px;font-size:14px;">
+                                A
+                            </div>
+                            <div style="background:linear-gradient(135deg, var(--primary), var(--secondary));padding:12px 16px;border-radius:14px;border-top-right-radius:2px;">
+                                <p style="font-size:13.5px;color:#fff;margin:0 0 4px;line-height:1.5;">
+                                    Fantastic news Dr. Chen! I have authorized the expansion on us-east-cluster-01. The 2 additional H100 pods are scaling up now and will be fully live within 5 minutes.
+                                </p>
+                                <small style="color:rgba(255,255,255,0.7);font-size:11px;">10:45 AM â€¢ Delivered</small>
+                            </div>
+                        </div>
+
+                        <!-- Incoming -->
+                        <div style="display:flex;gap:10px;max-width:75%;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">
+                                D
+                            </div>
+                            <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);padding:12px 16px;border-radius:14px;border-top-left-radius:2px;">
+                                <p style="font-size:13.5px;color:#fff;margin:0 0 4px;line-height:1.5;">
+                                    Thank you so much! Truly appreciate the prompt support and unmatched SLA speed.
+                                </p>
+                                <small style="color:var(--muted);font-size:11px;">10:48 AM</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input Box -->
+                    <form id="chatForm" style="display:flex;gap:10px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);">
+                        <input type="text" id="chatInput" placeholder="Type an administrative reply..." required style="flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:12px 16px;color:#fff;outline:none;font-size:13.5px;font-family:'Outfit',sans-serif;">
+                        <button type="submit" class="dash-btn dash-btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        document.getElementById('chatForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const stream = document.getElementById('chatMessageStream');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // Get initial from localStorage or default A
+            const email = localStorage.getItem('loggedInUserEmail') || 'admin@stackly.com';
+            const initial = email.charAt(0).toUpperCase();
+
+            const bubble = document.createElement('div');
+            bubble.style.cssText = 'display:flex;gap:10px;max-width:75%;align-self:flex-end;flex-direction:row-reverse;';
+            bubble.innerHTML = `
+                <div class="user-avatar-initial" style="width:32px;height:32px;font-size:14px;">${initial}</div>
+                <div style="background:linear-gradient(135deg, var(--primary), var(--secondary));padding:12px 16px;border-radius:14px;border-top-right-radius:2px;">
+                    <p style="font-size:13.5px;color:#fff;margin:0 0 4px;line-height:1.5;">${text}</p>
+                    <small style="color:rgba(255,255,255,0.7);font-size:11px;">Just now â€¢ Sent</small>
+                </div>
+            `;
+            stream.appendChild(bubble);
+            input.value = '';
+            stream.scrollTop = stream.scrollHeight;
+        });
+    </script>
+</body>
+
+</html>

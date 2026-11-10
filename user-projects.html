@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | User | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- USER SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="user.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge user">User</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Workspace</div>
+                <a href="user.html"><i class="fas fa-th-large"></i> Overview</a>
+                <a href="user-tools.html"><i class="fas fa-robot"></i> My Tools</a>
+                <a href="user-projects.html" class="active"><i class="fas fa-folder"></i> My Projects</a>
+
+                <div class="sidebar-menu-category">Usage & Plan</div>
+                <a href="user-usage.html"><i class="fas fa-chart-line"></i> Usage</a>
+                <a href="user-history.html"><i class="fas fa-history"></i> History</a>
+                <a href="user-billing.html"><i class="fas fa-credit-card"></i> Billing</a>
+
+                <div class="sidebar-menu-category">Settings</div>
+                <a href="user-profile.html"><i class="fas fa-user"></i> Profile</a>
+                <a href="user-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="user.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>My Workspaces, <span class="dynamic-user-name">User</span> &#128075;</h1>
+                        <p>Organize your datasets, notebooks, fine-tuned checkpoints, and deployed endpoints</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-folder-open"></i> 8 Workspaces</span>
+                    <a href="user-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">U</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">User</h4>
+                            <p id="userRoleHeader">Pro Member</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- STATS QUICK BAR -->
+            <div class="dash-stats-grid">
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon emerald"><i class="fas fa-folder"></i></div>
+                        <span class="dash-badge success">Active</span>
+                    </div>
+                    <div class="dash-stat-value">8</div>
+                    <div class="dash-stat-label">Active Workspaces</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon cyan"><i class="fas fa-database"></i></div>
+                        <span class="dash-stat-trend up">+4 Datasets</span>
+                    </div>
+                    <div class="dash-stat-value">24 Files</div>
+                    <div class="dash-stat-label">Uploaded Datasets</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon amber"><i class="fas fa-hard-drive"></i></div>
+                        <span class="dash-badge info">14.8 / 25 GB</span>
+                    </div>
+                    <div class="dash-stat-value">59%</div>
+                    <div class="dash-stat-label">Storage Capacity Used</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon purple"><i class="fas fa-users"></i></div>
+                        <span class="dash-badge active">Collaborative</span>
+                    </div>
+                    <div class="dash-stat-value">18</div>
+                    <div class="dash-stat-label">Team Members Shared</div>
+                </div>
+            </div>
+
+            <!-- ACTION BAR -->
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:15px;">
+                <div style="display:flex;gap:10px;">
+                    <button class="dash-btn dash-btn-primary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-plus"></i> New Workspace
+                    </button>
+                    <button class="dash-btn dash-btn-secondary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-cloud-arrow-up"></i> Upload Dataset
+                    </button>
+                </div>
+                <div style="display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:8px 14px;width:260px;">
+                    <i class="fas fa-search" style="color:var(--muted);margin-right:10px;font-size:13px;"></i>
+                    <input type="text" placeholder="Search my projects..." style="background:transparent;border:none;color:#fff;outline:none;font-size:13px;width:100%;font-family:'Outfit',sans-serif;">
+                </div>
+            </div>
+
+            <!-- PROJECTS TABLE CARD -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fas fa-cubes"></i> Active Workspaces</h2>
+                    <span style="font-size:13px;color:var(--muted);">Pro Tier Shared Access</span>
+                </div>
+
+                <div class="dash-table-wrap">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Workspace Name</th>
+                                <th>Model Engine</th>
+                                <th>Storage</th>
+                                <th>Progress</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;color:#fff;">Customer Sentiment Classifier</div>
+                                    <small style="color:var(--muted);">Updated 2 hours ago â€¢ 14,200 rows</small>
+                                </td>
+                                <td>Stackly-LLM-70B</td>
+                                <td>1.8 GB</td>
+                                <td style="width:140px;">
+                                    <div style="font-size:12px;color:var(--secondary);margin-bottom:3px;font-weight:600;">92%</div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:92%;height:100%;background:linear-gradient(90deg, #10b981, #14b8a6);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge active">Deployed</span></td>
+                                <td>
+                                    <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Launch</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;color:#fff;">Automated Legal Document Parser</div>
+                                    <small style="color:var(--muted);">Updated Yesterday â€¢ 620 PDFs indexed</small>
+                                </td>
+                                <td>Dense Vector Embedding v3</td>
+                                <td>3.2 GB</td>
+                                <td style="width:140px;">
+                                    <div style="font-size:12px;color:#06b6d4;margin-bottom:3px;font-weight:600;">100%</div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:100%;height:100%;background:#06b6d4;border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge active">Live API</span></td>
+                                <td>
+                                    <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Launch</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;color:#fff;">Drone Agricultural Crop Vision</div>
+                                    <small style="color:var(--muted);">Updated 3 days ago â€¢ 8,400 multi-spectral images</small>
+                                </td>
+                                <td>VisionNet Pro v4</td>
+                                <td>6.4 GB</td>
+                                <td style="width:140px;">
+                                    <div style="font-size:12px;color:#f59e0b;margin-bottom:3px;font-weight:600;">64%</div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:64%;height:100%;background:linear-gradient(90deg, #f59e0b, #ef4444);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge pending">Fine-Tuning</span></td>
+                                <td>
+                                    <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Launch</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;color:#fff;">E-Commerce Product Recommendation</div>
+                                    <small style="color:var(--muted);">Updated 5 days ago â€¢ 250,000 transaction events</small>
+                                </td>
+                                <td>Neural Collaborative Filtering</td>
+                                <td>3.4 GB</td>
+                                <td style="width:140px;">
+                                    <div style="font-size:12px;color:#a855f7;margin-bottom:3px;font-weight:600;">78%</div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:78%;height:100%;background:linear-gradient(90deg, #a855f7, #ec4899);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge active">Deployed</span></td>
+                                <td>
+                                    <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Launch</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

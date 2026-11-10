@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Management | Admin | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="dashboard.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge admin">Admin</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Main Menu</div>
+                <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+                <a href="admin-ai-tools.html" class="active"><i class="fas fa-robot"></i> AI Tools</a>
+                <a href="admin-projects.html"><i class="fas fa-folder"></i> Projects</a>
+                <a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a>
+
+                <div class="sidebar-menu-category">Communication</div>
+                <a href="admin-messages.html"><i class="fas fa-comments"></i> Messages</a>
+                <a href="admin-notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+
+                <div class="sidebar-menu-category">Administration</div>
+                <a href="admin-profile.html"><i class="fas fa-user-shield"></i> Profile</a>
+                <a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="dashboard.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>AI Tools & Models, <span class="dynamic-user-name">Admin</span> &#128075;</h1>
+                        <p>Configure neural architecture endpoints, inference quotas, and model lifecycles</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-shield-alt"></i> 6 Models Active</span>
+                    <a href="admin-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">A</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">Admin</h4>
+                            <p id="userRoleHeader">Super Administrator</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- STATS QUICK BAR -->
+            <div class="dash-stats-grid">
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon emerald"><i class="fas fa-check-double"></i></div>
+                        <span class="dash-badge success">Live</span>
+                    </div>
+                    <div class="dash-stat-value">6 Active</div>
+                    <div class="dash-stat-label">Production AI Endpoints</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon cyan"><i class="fas fa-tachometer-alt"></i></div>
+                        <span class="dash-stat-trend up">+4.2%</span>
+                    </div>
+                    <div class="dash-stat-value">98.4%</div>
+                    <div class="dash-stat-label">Average Validation Accuracy</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon amber"><i class="fas fa-bolt"></i></div>
+                        <span class="dash-badge warning">12 ms</span>
+                    </div>
+                    <div class="dash-stat-value">P99 Latency</div>
+                    <div class="dash-stat-label">Ultra-Low Response Window</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon purple"><i class="fas fa-shield-alt"></i></div>
+                        <span class="dash-badge info">SOC-2</span>
+                    </div>
+                    <div class="dash-stat-value">100% Secure</div>
+                    <div class="dash-stat-label">Zero-Trust Model Sandboxing</div>
+                </div>
+            </div>
+
+            <!-- ACTION BAR -->
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:15px;">
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <button class="dash-btn dash-btn-primary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-plus-circle"></i> Deploy New Model
+                    </button>
+                    <button class="dash-btn dash-btn-secondary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-download"></i> Export Registry JSON
+                    </button>
+                </div>
+                <div style="display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:8px 14px;width:260px;">
+                    <i class="fas fa-search" style="color:var(--muted);margin-right:10px;font-size:13px;"></i>
+                    <input type="text" placeholder="Filter AI tools..." style="background:transparent;border:none;color:#fff;outline:none;font-size:13px;width:100%;font-family:'Outfit',sans-serif;">
+                </div>
+            </div>
+
+            <!-- AI TOOLS GRID -->
+            <div class="dash-grid-3">
+                <!-- Tool 1 -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="dash-stat-icon emerald"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">Stackly-LLM-70B</h3>
+                                <small style="color:var(--muted);">Generative NLP Core</small>
+                            </div>
+                        </div>
+                        <span class="dash-badge success">Active</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">
+                        Instruction-tuned foundation model supporting reasoning, code generation, summarization, and multi-turn conversations.
+                    </p>
+                    <div style="font-size:12.5px;color:var(--text);display:flex;justify-content:space-between;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <span>Accuracy: <strong style="color:#10b981;">98.6%</strong></span>
+                        <span>Framework: <strong>PyTorch 2.4</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:11.5px;color:var(--muted);"><i class="fas fa-microchip"></i> 4x H100 GPUs</span>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Configure</button>
+                    </div>
+                </div>
+
+                <!-- Tool 2 -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="dash-stat-icon cyan"><i class="fas fa-eye"></i></div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">VisionNet Pro v4</h3>
+                                <small style="color:var(--muted);">Computer Vision</small>
+                            </div>
+                        </div>
+                        <span class="dash-badge success">Active</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">
+                        Real-time object detection, depth estimation, and semantic segmentation with multi-spectral image sensor support.
+                    </p>
+                    <div style="font-size:12.5px;color:var(--text);display:flex;justify-content:space-between;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <span>Accuracy: <strong style="color:#10b981;">97.4%</strong></span>
+                        <span>Framework: <strong>TensorFlow</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:11.5px;color:var(--muted);"><i class="fas fa-microchip"></i> 2x A100 GPUs</span>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Configure</button>
+                    </div>
+                </div>
+
+                <!-- Tool 3 -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="dash-stat-icon purple"><i class="fas fa-code"></i></div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">CodeSynthesizer AI</h3>
+                                <small style="color:var(--muted);">Autonomous Dev Agent</small>
+                            </div>
+                        </div>
+                        <span class="dash-badge success">Active</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">
+                        Full-stack software engineering copilot providing unit test creation, refactoring, and AST vulnerability scanning.
+                    </p>
+                    <div style="font-size:12.5px;color:var(--text);display:flex;justify-content:space-between;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <span>Accuracy: <strong style="color:#10b981;">99.1%</strong></span>
+                        <span>Languages: <strong>24+ Stacks</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:11.5px;color:var(--muted);"><i class="fas fa-microchip"></i> TensorRT Cloud</span>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Configure</button>
+                    </div>
+                </div>
+
+                <!-- Tool 4 -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="dash-stat-icon amber"><i class="fas fa-dna"></i></div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">BioGenom Predictor</h3>
+                                <small style="color:var(--muted);">Bioinformatics AI</small>
+                            </div>
+                        </div>
+                        <span class="dash-badge warning">Fine-Tuning</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">
+                        Deep learning sequence modeling for mRNA folding prediction, disease biomarker discovery, and drug binding affinity.
+                    </p>
+                    <div style="font-size:12.5px;color:var(--text);display:flex;justify-content:space-between;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <span>Accuracy: <strong style="color:#f59e0b;">94.2%</strong></span>
+                        <span>Framework: <strong>JAX / Flax</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:11.5px;color:var(--muted);"><i class="fas fa-sync fa-spin"></i> Epoch 34/50</span>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Logs</button>
+                    </div>
+                </div>
+
+                <!-- Tool 5 -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="dash-stat-icon emerald"><i class="fas fa-microphone-lines"></i></div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">SpeechWave ASR</h3>
+                                <small style="color:var(--muted);">Audio & Voice Engine</small>
+                            </div>
+                        </div>
+                        <span class="dash-badge success">Active</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">
+                        Multi-language speech-to-text with background noise cancellation, speaker diarization, and emotion recognition.
+                    </p>
+                    <div style="font-size:12.5px;color:var(--text);display:flex;justify-content:space-between;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <span>Accuracy: <strong style="color:#10b981;">99.4%</strong></span>
+                        <span>Latency: <strong>8 ms</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:11.5px;color:var(--muted);"><i class="fas fa-microchip"></i> 1x A100 GPU</span>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Configure</button>
+                    </div>
+                </div>
+
+                <!-- Tool 6 -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="dash-stat-icon cyan"><i class="fas fa-chart-pie"></i></div>
+                            <div>
+                                <h3 style="font-size:16px;margin:0;color:#fff;">FinRisk Forecaster</h3>
+                                <small style="color:var(--muted);">Quantitative Predictive</small>
+                            </div>
+                        </div>
+                        <span class="dash-badge success">Active</span>
+                    </div>
+                    <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;">
+                        Monte Carlo simulation neural networks for algorithmic portfolio management, volatility estimation, and credit scoring.
+                    </p>
+                    <div style="font-size:12.5px;color:var(--text);display:flex;justify-content:space-between;margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.06);">
+                        <span>Accuracy: <strong style="color:#10b981;">99.1%</strong></span>
+                        <span>Framework: <strong>ONNX Runtime</strong></span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:11.5px;color:var(--muted);"><i class="fas fa-microchip"></i> Low-Latency Pod</span>
+                        <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Configure</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

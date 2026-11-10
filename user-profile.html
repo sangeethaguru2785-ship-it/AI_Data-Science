@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | User | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- USER SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="user.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge user">User</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Workspace</div>
+                <a href="user.html"><i class="fas fa-th-large"></i> Overview</a>
+                <a href="user-tools.html"><i class="fas fa-robot"></i> My Tools</a>
+                <a href="user-projects.html"><i class="fas fa-folder"></i> My Projects</a>
+
+                <div class="sidebar-menu-category">Usage & Plan</div>
+                <a href="user-usage.html"><i class="fas fa-chart-line"></i> Usage</a>
+                <a href="user-history.html"><i class="fas fa-history"></i> History</a>
+                <a href="user-billing.html"><i class="fas fa-credit-card"></i> Billing</a>
+
+                <div class="sidebar-menu-category">Settings</div>
+                <a href="user-profile.html" class="active"><i class="fas fa-user"></i> Profile</a>
+                <a href="user-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="user.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>User Profile, <span class="dynamic-user-name">User</span> &#128075;</h1>
+                        <p>Manage your account credentials, personalized initials, and team workspace preferences</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-bolt"></i> Pro Member</span>
+                    <a href="user-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">U</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">User</h4>
+                            <p id="userRoleHeader">Pro Member</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- PROFILE HERO BANNER -->
+            <div class="dash-card" style="margin-bottom:28px;">
+                <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+                    <!-- Large Initial Circular Avatar -->
+                    <div class="user-avatar-initial large">U</div>
+
+                    <div style="flex:1;">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;">
+                            <h2 style="font-size:26px;font-weight:800;margin:0;color:#fff;" class="dynamic-user-name">User</h2>
+                            <span class="dash-badge success"><i class="fas fa-bolt"></i> Pro Member</span>
+                            <span class="dash-badge info">Verified Developer</span>
+                        </div>
+                        <p style="color:var(--muted);font-size:14px;margin:0 0 10px;" class="dynamic-user-email">user@stackly.com</p>
+                        <div style="display:flex;gap:20px;font-size:12.5px;color:rgba(122,154,138,0.8);flex-wrap:wrap;">
+                            <span><i class="fas fa-id-badge" style="color:var(--secondary);margin-right:6px;"></i> Member ID: #USR-78402</span>
+                            <span><i class="fas fa-calendar" style="color:var(--secondary);margin-right:6px;"></i> Joined: January 2026</span>
+                            <span><i class="fas fa-shield" style="color:var(--secondary);margin-right:6px;"></i> Status: Active & Secured</span>
+                        </div>
+                    </div>
+
+                    <button class="dash-btn dash-btn-secondary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-sync"></i> Refresh Initial
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROFILE FORMS -->
+            <div class="dash-grid-equal-2">
+                <!-- Personal Details Form -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h2 class="dash-card-title"><i class="fas fa-user-edit"></i> Account Details</h2>
+                    </div>
+
+                    <form id="userProfileForm">
+                        <div class="dash-form-group">
+                            <label>Display Name (Extracted from Email)</label>
+                            <input type="text" class="dash-form-control dynamic-user-input-name" placeholder="Full Name" required>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Primary Email Address</label>
+                            <input type="email" class="dash-form-control dynamic-user-email" placeholder="user@stackly.com" required>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Company or Lab Affiliation</label>
+                            <input type="text" class="dash-form-control" value="Autonomous AI Research Labs">
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Timezone</label>
+                            <select class="dash-form-control" style="background:#162a20;">
+                                <option>UTC-05:00 (Eastern Time - US & Canada)</option>
+                                <option>UTC+00:00 (London, Dublin, Lisbon)</option>
+                                <option>UTC+05:30 (India Standard Time)</option>
+                                <option>UTC+08:00 (Singapore, Perth, Hong Kong)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="dash-btn dash-btn-primary" style="margin-top:10px;">
+                            <i class="fas fa-save"></i> Save Profile Details
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Password & Security Form -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h2 class="dash-card-title"><i class="fas fa-lock"></i> Password & Security</h2>
+                    </div>
+
+                    <form id="userPasswordForm">
+                        <div class="dash-form-group">
+                            <label>Current Password</label>
+                            <input type="password" id="userCurrentPassword" class="dash-form-control" placeholder="••••••••••••" required>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>New Password</label>
+                            <input type="password" id="userNewPassword" class="dash-form-control" placeholder="Min 8 chars with uppercase, lowercase, number & special char" required>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Confirm New Password</label>
+                            <input type="password" id="userConfirmPassword" class="dash-form-control" placeholder="Re-enter new password" required>
+                        </div>
+
+                        <!-- Connected Accounts -->
+                        <div style="background:rgba(255,255,255,0.03);padding:14px;border-radius:12px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.06);">
+                            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                                <span style="font-size:13.5px;color:#fff;"><i class="fab fa-google" style="color:#ea4335;margin-right:8px;"></i> Google Account</span>
+                                <span class="dash-badge success">Linked</span>
+                            </div>
+                            <div style="display:flex;align-items:center;justify-content:space-between;">
+                                <span style="font-size:13.5px;color:#fff;"><i class="fab fa-github" style="color:#fff;margin-right:8px;"></i> GitHub Workspace</span>
+                                <span class="dash-badge success">Connected</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="dash-btn dash-btn-primary">
+                            <i class="fas fa-key"></i> Update Password
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        document.getElementById('userProfileForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Profile details updated successfully!');
+        });
+        document.getElementById('userPasswordForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const newPass = document.getElementById('userNewPassword');
+            const confirmPass = document.getElementById('userConfirmPassword');
+            
+            const res = (window.validateStrictPassword || function(p){ return {valid: p && p.length>=8}; })(newPass.value);
+            if (!res.valid) {
+                alert(res.message || 'Password must be at least 8 characters with uppercase, lowercase, number, and special character.');
+                newPass.focus();
+                return;
+            }
+            if (newPass.value !== confirmPass.value) {
+                alert('Passwords do not match! Please verify your password.');
+                confirmPass.focus();
+                return;
+            }
+            alert('Password changed successfully!');
+        });
+    </script>
+</body>
+
+</html>

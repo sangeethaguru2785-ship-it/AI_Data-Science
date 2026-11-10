@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing & Subscription | User | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- USER SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="user.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge user">User</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Workspace</div>
+                <a href="user.html"><i class="fas fa-th-large"></i> Overview</a>
+                <a href="user-tools.html"><i class="fas fa-robot"></i> My Tools</a>
+                <a href="user-projects.html"><i class="fas fa-folder"></i> My Projects</a>
+
+                <div class="sidebar-menu-category">Usage & Plan</div>
+                <a href="user-usage.html"><i class="fas fa-chart-line"></i> Usage</a>
+                <a href="user-history.html"><i class="fas fa-history"></i> History</a>
+                <a href="user-billing.html" class="active"><i class="fas fa-credit-card"></i> Billing</a>
+
+                <div class="sidebar-menu-category">Settings</div>
+                <a href="user-profile.html"><i class="fas fa-user"></i> Profile</a>
+                <a href="user-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="user.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>Billing & Membership, <span class="dynamic-user-name">User</span> &#128075;</h1>
+                        <p>Manage subscription tiers, payment methods, compute add-ons, and tax invoices</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-check-circle"></i> Plan Active</span>
+                    <a href="user-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">U</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">User</h4>
+                            <p id="userRoleHeader">Pro Member</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- CURRENT PLAN BANNER -->
+            <div class="dash-card" style="margin-bottom:28px;background:linear-gradient(135deg, rgba(5,150,105,0.2) 0%, rgba(20,184,166,0.1) 100%);border:1px solid rgba(20,184,166,0.3);">
+                <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+                    <div>
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+                            <span class="dash-badge success"><i class="fas fa-bolt"></i> Current Active Plan</span>
+                            <span style="font-size:13px;color:var(--muted);">Billed Monthly</span>
+                        </div>
+                        <h2 style="font-size:32px;font-weight:800;color:#fff;margin:0 0 6px;">Pro Membership Tier</h2>
+                        <p style="color:var(--muted);font-size:14px;margin:0;max-width:540px;">
+                            Includes 100,000 monthly inference tokens, 50 GPU compute hours on NVIDIA H100 pods, and priority SLA access.
+                        </p>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:36px;font-weight:800;color:#fff;">$49 <span style="font-size:16px;color:var(--muted);font-weight:500;">/ month</span></div>
+                        <small style="color:var(--secondary);display:block;margin-top:4px;">Next billing date: <strong>Dec 01, 2026</strong></small>
+                        <div style="margin-top:12px;display:flex;gap:10px;justify-content:flex-end;">
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Manage Plan</button>
+                            <button class="dash-btn dash-btn-primary dash-btn-sm" onclick="window.location.href='404.html';">Upgrade Tier</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAYMENT METHOD & ADD-ONS -->
+            <div class="dash-grid-equal-2">
+                <!-- Payment Method -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h2 class="dash-card-title"><i class="fas fa-credit-card"></i> Saved Payment Method</h2>
+                        <span class="dash-badge active">Default</span>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:16px;padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:14px;margin-bottom:18px;">
+                        <div style="width:48px;height:36px;border-radius:6px;background:#1a1f71;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;letter-spacing:1px;">
+                            VISA
+                        </div>
+                        <div style="flex:1;">
+                            <h4 style="font-size:15px;color:#fff;margin:0 0 2px;">Visa ending in 4242</h4>
+                            <small style="color:var(--muted);">Expires 12/2028 â€¢ Automatic billing enabled</small>
+                        </div>
+                        <i class="fas fa-shield-halved" style="color:#10b981;font-size:18px;"></i>
+                    </div>
+
+                    <button class="dash-btn dash-btn-secondary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-pen"></i> Update Payment Method
+                    </button>
+                </div>
+
+                <!-- Add-On Compute Credits -->
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <h2 class="dash-card-title"><i class="fas fa-coins"></i> On-Demand Token Packs</h2>
+                    </div>
+                    <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:18px;">
+                        Need extra inference capacity before your monthly cycle renews? Purchase instant rollover tokens that never expire.
+                    </p>
+
+                    <div style="display:flex;gap:10px;margin-bottom:18px;">
+                        <div style="flex:1;padding:14px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;text-align:center;">
+                            <div style="font-weight:700;font-size:16px;color:#fff;">50k Tokens</div>
+                            <div style="color:var(--secondary);font-size:14px;margin:4px 0;">$15</div>
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm" style="width:100%;" onclick="window.location.href='404.html';">Buy</button>
+                        </div>
+                        <div style="flex:1;padding:14px;background:rgba(20,184,166,0.08);border:1px solid var(--secondary);border-radius:12px;text-align:center;">
+                            <div style="font-weight:700;font-size:16px;color:#fff;">150k Tokens</div>
+                            <div style="color:var(--secondary);font-size:14px;margin:4px 0;">$35 <small style="color:#10b981;">(Save 20%)</small></div>
+                            <button class="dash-btn dash-btn-primary dash-btn-sm" style="width:100%;" onclick="window.location.href='404.html';">Buy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INVOICES TABLE -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fas fa-file-invoice-dollar"></i> Billing & Invoice History</h2>
+                </div>
+                <div class="dash-table-wrap">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Invoice Reference</th>
+                                <th>Billing Period</th>
+                                <th>Amount</th>
+                                <th>Payment Method</th>
+                                <th>Status</th>
+                                <th>Receipt</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#INV-2026-1101</strong></td>
+                                <td>Nov 01, 2026 â€“ Nov 30, 2026</td>
+                                <td>$49.00 USD</td>
+                                <td>Visa â€¢â€¢â€¢â€¢ 4242</td>
+                                <td><span class="dash-badge success">Paid</span></td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';"><i class="fas fa-download"></i> PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#INV-2026-1001</strong></td>
+                                <td>Oct 01, 2026 â€“ Oct 31, 2026</td>
+                                <td>$49.00 USD</td>
+                                <td>Visa â€¢â€¢â€¢â€¢ 4242</td>
+                                <td><span class="dash-badge success">Paid</span></td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';"><i class="fas fa-download"></i> PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#INV-2026-0901</strong></td>
+                                <td>Sep 01, 2026 â€“ Sep 30, 2026</td>
+                                <td>$49.00 USD</td>
+                                <td>Visa â€¢â€¢â€¢â€¢ 4242</td>
+                                <td><span class="dash-badge success">Paid</span></td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';"><i class="fas fa-download"></i> PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

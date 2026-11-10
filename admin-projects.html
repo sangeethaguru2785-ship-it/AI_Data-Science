@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Management | Admin | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="dashboard.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge admin">Admin</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Main Menu</div>
+                <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+                <a href="admin-ai-tools.html"><i class="fas fa-robot"></i> AI Tools</a>
+                <a href="admin-projects.html" class="active"><i class="fas fa-folder"></i> Projects</a>
+                <a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a>
+
+                <div class="sidebar-menu-category">Communication</div>
+                <a href="admin-messages.html"><i class="fas fa-comments"></i> Messages</a>
+                <a href="admin-notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+
+                <div class="sidebar-menu-category">Administration</div>
+                <a href="admin-profile.html"><i class="fas fa-user-shield"></i> Profile</a>
+                <a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="dashboard.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>Project Hub, <span class="dynamic-user-name">Admin</span> &#128075;</h1>
+                        <p>Track multi-tenant client deployments, model milestones, and delivery pipelines</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-folder-open"></i> 42 Active Projects</span>
+                    <a href="admin-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">A</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">Admin</h4>
+                            <p id="userRoleHeader">Super Administrator</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- STATS QUICK BAR -->
+            <div class="dash-stats-grid">
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon emerald"><i class="fas fa-spinner fa-spin"></i></div>
+                        <span class="dash-stat-trend up">+8 New</span>
+                    </div>
+                    <div class="dash-stat-value">42</div>
+                    <div class="dash-stat-label">Active Workspaces</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon cyan"><i class="fas fa-check-circle"></i></div>
+                        <span class="dash-badge success">Delivered</span>
+                    </div>
+                    <div class="dash-stat-value">128</div>
+                    <div class="dash-stat-label">Completed Deployments</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon amber"><i class="fas fa-user-friends"></i></div>
+                        <span class="dash-stat-trend up">14 Teams</span>
+                    </div>
+                    <div class="dash-stat-value">168</div>
+                    <div class="dash-stat-label">Assigned Engineers</div>
+                </div>
+
+                <div class="dash-stat-box">
+                    <div class="dash-stat-box-top">
+                        <div class="dash-stat-icon purple"><i class="fas fa-shield-alt"></i></div>
+                        <span class="dash-badge info">100% SLA</span>
+                    </div>
+                    <div class="dash-stat-value">99.8%</div>
+                    <div class="dash-stat-label">On-Time Sprint Completion</div>
+                </div>
+            </div>
+
+            <!-- ACTION BAR -->
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:15px;">
+                <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                    <button class="dash-btn dash-btn-primary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-plus"></i> New Project
+                    </button>
+                    <button class="dash-btn dash-btn-secondary" onclick="window.location.href='404.html';">
+                        <i class="fas fa-file-export"></i> Export Report
+                    </button>
+                </div>
+                <div style="display:flex;align-items:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:8px 14px;width:260px;">
+                    <i class="fas fa-search" style="color:var(--muted);margin-right:10px;font-size:13px;"></i>
+                    <input type="text" placeholder="Search projects..." style="background:transparent;border:none;color:#fff;outline:none;font-size:13px;width:100%;font-family:'Outfit',sans-serif;">
+                </div>
+            </div>
+
+            <!-- PROJECTS LIST CARD -->
+            <div class="dash-card">
+                <div class="dash-card-header">
+                    <h2 class="dash-card-title"><i class="fas fa-tasks"></i> Active Enterprise AI Pipelines</h2>
+                    <span style="font-size:13px;color:var(--muted);">Showing 5 of 42 Projects</span>
+                </div>
+                <div class="dash-table-wrap">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Project Name & Client</th>
+                                <th>Category</th>
+                                <th>Progress</th>
+                                <th>Team</th>
+                                <th>Status</th>
+                                <th>Deadline</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;font-size:15px;color:#fff;">Autonomous Medical Diagnostics</div>
+                                    <small style="color:var(--muted);">Client: AlphaCare Health Networks</small>
+                                </td>
+                                <td><span class="dash-badge info">Healthcare AI</span></td>
+                                <td style="width:160px;">
+                                    <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
+                                        <span style="color:var(--secondary);font-weight:600;">85%</span>
+                                    </div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:85%;height:100%;background:linear-gradient(90deg, #10b981, #14b8a6);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display:flex;gap:4px;font-size:12px;color:var(--muted);">
+                                        <span style="padding:3px 6px;background:rgba(255,255,255,0.06);border-radius:4px;">6 Devs</span>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge active">On Track</span></td>
+                                <td style="font-size:13px;color:var(--muted);">Nov 28, 2026</td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Open</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;font-size:15px;color:#fff;">Algorithmic High-Frequency Trading Core</div>
+                                    <small style="color:var(--muted);">Client: Vanguard Quant Capital</small>
+                                </td>
+                                <td><span class="dash-badge warning">Fintech</span></td>
+                                <td style="width:160px;">
+                                    <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
+                                        <span style="color:#06b6d4;font-weight:600;">94%</span>
+                                    </div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:94%;height:100%;background:linear-gradient(90deg, #06b6d4, #3b82f6);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display:flex;gap:4px;font-size:12px;color:var(--muted);">
+                                        <span style="padding:3px 6px;background:rgba(255,255,255,0.06);border-radius:4px;">8 Devs</span>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge active">QA Audit</span></td>
+                                <td style="font-size:13px;color:var(--muted);">Dec 05, 2026</td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Open</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;font-size:15px;color:#fff;">Satellite Climate & Disaster Telemetry</div>
+                                    <small style="color:var(--muted);">Client: Global Weather Foundation</small>
+                                </td>
+                                <td><span class="dash-badge info">Geospatial</span></td>
+                                <td style="width:160px;">
+                                    <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
+                                        <span style="color:#f59e0b;font-weight:600;">62%</span>
+                                    </div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:62%;height:100%;background:linear-gradient(90deg, #f59e0b, #ef4444);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display:flex;gap:4px;font-size:12px;color:var(--muted);">
+                                        <span style="padding:3px 6px;background:rgba(255,255,255,0.06);border-radius:4px;">5 Devs</span>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge pending">In Sprint</span></td>
+                                <td style="font-size:13px;color:var(--muted);">Dec 20, 2026</td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Open</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;font-size:15px;color:#fff;">Smart City Traffic Optimization Mesh</div>
+                                    <small style="color:var(--muted);">Client: Metro Urban Authority</small>
+                                </td>
+                                <td><span class="dash-badge success">IoT & Vision</span></td>
+                                <td style="width:160px;">
+                                    <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
+                                        <span style="color:#10b981;font-weight:600;">100%</span>
+                                    </div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:100%;height:100%;background:#10b981;border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display:flex;gap:4px;font-size:12px;color:var(--muted);">
+                                        <span style="padding:3px 6px;background:rgba(255,255,255,0.06);border-radius:4px;">9 Devs</span>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge success">Completed</span></td>
+                                <td style="font-size:13px;color:var(--muted);">Completed</td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Review</button></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <div style="font-weight:700;font-size:15px;color:#fff;">Multi-Lingual Customer Voice Concierge</div>
+                                    <small style="color:var(--muted);">Client: Pacific Telecommunications</small>
+                                </td>
+                                <td><span class="dash-badge info">Audio NLP</span></td>
+                                <td style="width:160px;">
+                                    <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
+                                        <span style="color:#a855f7;font-weight:600;">45%</span>
+                                    </div>
+                                    <div style="height:6px;background:rgba(255,255,255,0.06);border-radius:6px;overflow:hidden;">
+                                        <div style="width:45%;height:100%;background:linear-gradient(90deg, #a855f7, #ec4899);border-radius:6px;"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div style="display:flex;gap:4px;font-size:12px;color:var(--muted);">
+                                        <span style="padding:3px 6px;background:rgba(255,255,255,0.06);border-radius:4px;">4 Devs</span>
+                                    </div>
+                                </td>
+                                <td><span class="dash-badge active">Prototyping</span></td>
+                                <td style="font-size:13px;color:var(--muted);">Jan 15, 2027</td>
+                                <td><button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Open</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-split-wrapper">
+        <!-- LEFT: HERO SIDE -->
+        <div class="auth-hero-side" style="background-image: url('image/images_4.webp');">
+            <div class="auth-hero-overlay"></div>
+            <div class="auth-hero-glow"></div>
+
+            <div class="auth-hero-content">
+                <div class="auth-hero-top">
+                    <div class="auth-hero-logo">
+                        <a href="index.html">
+                            <img src="logo.webp" alt="Stackly AI">
+                        </a>
+                    </div>
+                    <span class="auth-hero-badge"><i class="fas fa-sparkles"></i> 14-Day Free Access</span>
+                </div>
+
+                <div class="auth-hero-main">
+                    <h2>Join the Next Generation of <span>AI Innovation</span></h2>
+                    <p>Create your enterprise account to build intelligent pipelines, deploy predictive machine learning models, and automate data operations.</p>
+
+                    <div class="auth-hero-features">
+                        <div class="auth-hero-feature-item">
+                            <div class="icon-wrap"><i class="fas fa-rocket"></i></div>
+                            <span>Instant Cloud Workspace Setup with Copilot</span>
+                        </div>
+                        <div class="auth-hero-feature-item">
+                            <div class="icon-wrap"><i class="fas fa-cubes"></i></div>
+                            <span>100+ Pre-Trained Neural Networks & Datasets</span>
+                        </div>
+                        <div class="auth-hero-feature-item">
+                            <div class="icon-wrap"><i class="fas fa-shield-alt"></i></div>
+                            <span>Granular Role-Based Security & Compliance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-hero-footer">
+                    <div class="auth-hero-avatars">
+                        <img src="joe.webp" alt="User 1">
+                        <img src="john.webp" alt="User 2">
+                        <img src="image/images_2.webp" alt="User 3">
+                    </div>
+                    <span>Empowering over 50,000 developers across 80+ countries</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: AUTHENTICATION FORM SIDE -->
+        <div class="auth-form-side">
+            <div class="auth-form-card">
+                <div class="auth-top-nav">
+                    <a href="index.html" class="back-to-site-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                    <div class="auth-mobile-logo">
+                        <a href="index.html">
+                            <img src="logo.webp" alt="Stackly AI">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="auth-form-header">
+                    <h1>Create Account</h1>
+                    <p>Select your account type and fill in your details to get started</p>
+                </div>
+
+                <!-- 1. ADMIN & USER ROLE SELECTION -->
+                <span class="role-section-label">Select Account Role</span>
+                <div class="role-selector-grid" id="roleSelectorGrid">
+                    <!-- User Role Card -->
+                    <div class="role-card active" data-role="user" id="roleUserCard">
+                        <div class="role-card-top">
+                            <div class="role-icon-box">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="role-radio-circle">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class="role-info">
+                            <h4>User Account</h4>
+                            <p>Standard access for analysts, engineers & researchers</p>
+                        </div>
+                    </div>
+
+                    <!-- Admin Role Card -->
+                    <div class="role-card" data-role="admin" id="roleAdminCard">
+                        <div class="role-card-top">
+                            <div class="role-icon-box">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="role-radio-circle">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class="role-info">
+                            <h4>Admin Account</h4>
+                            <p>Master administrator with full system controls & team tools</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="auth-form" id="signupForm">
+                    <input type="hidden" id="selectedRole" name="selectedRole" value="user">
+
+                    <div class="auth-input-group">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="fullName" placeholder="Full Name" required autocomplete="name">
+                    </div>
+
+                    <div class="auth-input-group">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input type="email" id="signupEmail" placeholder="Email Address" required autocomplete="email">
+                    </div>
+                    <div id="signupEmailError" class="auth-field-error"></div>
+
+                    <div class="auth-input-group">
+                        <i class="fas fa-phone input-icon"></i>
+                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" required autocomplete="tel">
+                    </div>
+
+                    <div class="auth-input-group">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="signupPassword" placeholder="Create Password" required autocomplete="new-password">
+                        <button type="button" class="password-toggle-btn" id="toggleSignupPassword" aria-label="Toggle password visibility">
+                            <i class="far fa-eye-slash"></i>
+                        </button>
+                    </div>
+                    <div id="signupPasswordError" class="auth-field-error"></div>
+
+                    <div class="auth-input-group">
+                        <i class="fas fa-shield-halved input-icon"></i>
+                        <input type="password" id="confirmPassword" placeholder="Confirm Password" required autocomplete="new-password">
+                        <button type="button" class="password-toggle-btn" id="toggleConfirmPassword" aria-label="Toggle password visibility">
+                            <i class="far fa-eye-slash"></i>
+                        </button>
+                    </div>
+                    <div id="confirmPasswordError" class="auth-field-error"></div>
+
+                    <div class="auth-options-row" style="margin-top:10px;">
+                        <label class="auth-remember-label">
+                            <input type="checkbox" id="termsCheck" required>
+                            <span>I agree to the <a href="404.html" style="color:var(--secondary); text-decoration:none;">Terms & Conditions</a> and <a href="404.html" style="color:var(--secondary); text-decoration:none;">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary auth-submit-btn" id="authSubmitBtn">
+                        <span id="submitBtnText">Create User Account</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+
+                <div class="auth-split-divider">
+                    <span>Or Sign Up With</span>
+                </div>
+
+                <div class="auth-social-row">
+                    <a href="404.html" class="auth-social-btn google">
+                        <i class="fab fa-google"></i> Google
+                    </a>
+                    <a href="404.html" class="auth-social-btn github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+
+                <div class="auth-card-footer">
+                    Already have an account? <a href="login.html">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        // DOM Elements
+        const roleCards = document.querySelectorAll('.role-card');
+        const selectedRoleInput = document.getElementById('selectedRole');
+        const submitBtnText = document.getElementById('submitBtnText');
+        const signupForm = document.getElementById('signupForm');
+        const signupEmail = document.getElementById('signupEmail');
+        const signupEmailError = document.getElementById('signupEmailError');
+        const signupPassword = document.getElementById('signupPassword');
+        const signupPasswordError = document.getElementById('signupPasswordError');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const toggleSignupPassword = document.getElementById('toggleSignupPassword');
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+
+        // Clear errors on input
+        if (signupEmail && signupEmailError) {
+            signupEmail.addEventListener('input', () => {
+                signupEmailError.textContent = '';
+                signupEmail.classList.remove('input-error');
+            });
+        }
+        if (signupPassword && signupPasswordError) {
+            signupPassword.addEventListener('input', () => {
+                signupPasswordError.textContent = '';
+                signupPassword.classList.remove('input-error');
+            });
+        }
+        if (confirmPassword && confirmPasswordError) {
+            confirmPassword.addEventListener('input', () => {
+                confirmPasswordError.textContent = '';
+                confirmPassword.classList.remove('input-error');
+            });
+        }
+
+        // 1. Role Selection Handler (Single selection enforced)
+        function setRole(role) {
+            roleCards.forEach(card => {
+                if (card.getAttribute('data-role') === role) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+            selectedRoleInput.value = role;
+            if (role === 'admin') {
+                submitBtnText.textContent = 'Create Admin Account';
+            } else {
+                submitBtnText.textContent = 'Create User Account';
+            }
+        }
+
+        roleCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const role = card.getAttribute('data-role');
+                setRole(role);
+            });
+        });
+
+        // 2. Password Visibility Toggles
+        function setupToggle(btn, input) {
+            if (btn && input) {
+                btn.addEventListener('click', () => {
+                    if (input.type === 'password') {
+                        input.type = 'text';
+                        btn.innerHTML = '<i class="far fa-eye"></i>';
+                    } else {
+                        input.type = 'password';
+                        btn.innerHTML = '<i class="far fa-eye-slash"></i>';
+                    }
+                });
+            }
+        }
+
+        setupToggle(toggleSignupPassword, signupPassword);
+        setupToggle(toggleConfirmPassword, confirmPassword);
+
+        // 3. Form Submission & Role-Based Redirection
+        signupForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Strict Email Validation
+            const emailValidation = window.validateStrictEmail ? window.validateStrictEmail(signupEmail.value) : { valid: true };
+            if (!emailValidation.valid) {
+                if (signupEmailError) {
+                    signupEmailError.textContent = emailValidation.message;
+                }
+                signupEmail.classList.add('input-error');
+                signupEmail.focus();
+                return;
+            }
+            if (signupEmailError) signupEmailError.textContent = '';
+            signupEmail.classList.remove('input-error');
+
+            // Strict Password Validation
+            const passValidation = window.validateStrictPassword ? window.validateStrictPassword(signupPassword.value) : { valid: true };
+            if (!passValidation.valid) {
+                if (signupPasswordError) {
+                    signupPasswordError.textContent = passValidation.message;
+                }
+                signupPassword.classList.add('input-error');
+                signupPassword.focus();
+                return;
+            }
+            if (signupPasswordError) signupPasswordError.textContent = '';
+            signupPassword.classList.remove('input-error');
+
+            if (signupPassword.value !== confirmPassword.value) {
+                if (confirmPasswordError) {
+                    confirmPasswordError.textContent = 'Passwords do not match! Please verify your password.';
+                }
+                confirmPassword.classList.add('input-error');
+                confirmPassword.focus();
+                return;
+            }
+            if (confirmPasswordError) confirmPasswordError.textContent = '';
+            confirmPassword.classList.remove('input-error');
+
+            const role = selectedRoleInput.value;
+            const email = signupEmail.value.trim().toLowerCase();
+            localStorage.setItem('loggedInUserEmail', email);
+            localStorage.setItem('loggedInUserRole', role);
+
+            if (role === 'admin') {
+                alert('Admin Account Created Successfully! Redirecting to the Admin Dashboard...');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('User Account Created Successfully! Redirecting to the User Dashboard...');
+                window.location.href = 'user.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

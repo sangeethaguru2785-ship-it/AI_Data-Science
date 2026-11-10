@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Settings | Admin | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="dashboard.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge admin">Admin</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Main Menu</div>
+                <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+                <a href="admin-ai-tools.html"><i class="fas fa-robot"></i> AI Tools</a>
+                <a href="admin-projects.html"><i class="fas fa-folder"></i> Projects</a>
+                <a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a>
+
+                <div class="sidebar-menu-category">Communication</div>
+                <a href="admin-messages.html"><i class="fas fa-comments"></i> Messages</a>
+                <a href="admin-notifications.html"><i class="fas fa-bell"></i> Notifications</a>
+
+                <div class="sidebar-menu-category">Administration</div>
+                <a href="admin-profile.html"><i class="fas fa-user-shield"></i> Profile</a>
+                <a href="admin-settings.html" class="active"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="dashboard.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>System Settings, <span class="dynamic-user-name">Admin</span> &#128075;</h1>
+                        <p>Global infrastructure policies, model inference guardrails, and cluster configurations</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-sliders"></i> Engine v2.4</span>
+                    <a href="admin-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">A</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">Admin</h4>
+                            <p id="userRoleHeader">Super Administrator</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- SETTINGS FORM SECTIONS -->
+            <form id="settingsForm">
+                <div class="dash-grid-equal-2">
+                    
+                    <!-- General Platform Configuration -->
+                    <div class="dash-card">
+                        <div class="dash-card-header">
+                            <h2 class="dash-card-title"><i class="fas fa-sliders-h"></i> Core Environment Policy</h2>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Enterprise Platform Identifier</label>
+                            <input type="text" class="dash-form-control" value="Stackly Enterprise Neural Cloud" required>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Default Deployment Region</label>
+                            <select class="dash-form-control" style="background:#162a20;">
+                                <option>us-east-cluster-01 (Virginia, Fast Inference)</option>
+                                <option>eu-central-cluster-02 (Frankfurt, GDPR Shield)</option>
+                                <option>ap-east-cluster-01 (Tokyo, Asia Pacific)</option>
+                            </select>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Max Token Generation Limit (per request)</label>
+                            <input type="number" class="dash-form-control" value="32768">
+                        </div>
+
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border-radius:12px;margin-top:15px;">
+                            <div>
+                                <strong style="font-size:13.5px;color:#fff;">Production Maintenance Mode</strong>
+                                <p style="font-size:12px;color:var(--muted);margin:2px 0 0;">Route non-essential traffic to fallback cached pods</p>
+                            </div>
+                            <label style="cursor:pointer;position:relative;">
+                                <input type="checkbox" style="width:18px;height:18px;accent-color:var(--secondary);cursor:pointer;">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Security & Rate Limits -->
+                    <div class="dash-card">
+                        <div class="dash-card-header">
+                            <h2 class="dash-card-title"><i class="fas fa-shield-alt"></i> Security & Firewall Rules</h2>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Allowed Admin IP CIDR Range</label>
+                            <input type="text" class="dash-form-control" value="0.0.0.0/0 (Global Encrypted Mesh)" required>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>DDoS / Burst Rate Limiting</label>
+                            <select class="dash-form-control" style="background:#162a20;">
+                                <option>Aggressive (10,000 req/min with CAPTCHA Shield)</option>
+                                <option>Moderate (25,000 req/min with Token Bucket)</option>
+                                <option>Dedicated Tier (Custom High-Throughput Pipe)</option>
+                            </select>
+                        </div>
+
+                        <div class="dash-form-group">
+                            <label>Automatic Session Inactivity Timeout</label>
+                            <select class="dash-form-control" style="background:#162a20;">
+                                <option>30 Minutes (Recommended Security Standard)</option>
+                                <option>60 Minutes</option>
+                                <option>4 Hours</option>
+                            </select>
+                        </div>
+
+                        <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;background:rgba(255,255,255,0.03);border-radius:12px;margin-top:15px;">
+                            <div>
+                                <strong style="font-size:13.5px;color:#fff;">Automated Threat Intelligence Log</strong>
+                                <p style="font-size:12px;color:var(--muted);margin:2px 0 0;">Forward zero-day anomalies to Security SIEM</p>
+                            </div>
+                            <label style="cursor:pointer;position:relative;">
+                                <input type="checkbox" checked style="width:18px;height:18px;accent-color:var(--secondary);cursor:pointer;">
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:12px;margin-top:10px;">
+                    <button type="button" class="dash-btn dash-btn-secondary" onclick="window.location.href='404.html';">
+                        Reset Defaults
+                    </button>
+                    <button type="submit" class="dash-btn dash-btn-primary">
+                        <i class="fas fa-save"></i> Save Platform Changes
+                    </button>
+                </div>
+            </form>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        document.getElementById('settingsForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Platform configurations saved and pushed to all active cluster nodes!');
+        });
+    </script>
+</body>
+
+</html>

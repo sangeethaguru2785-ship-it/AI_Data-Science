@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications & Alerts | Admin | Stackly AI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+
+<body style="background:#0a1a14; color:#fff; font-family:'Outfit',sans-serif; margin:0;">
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header-row">
+                <div class="sidebar-logo">
+                    <a href="dashboard.html">
+                        <img src="logo.webp" alt="Stackly AI">
+                    </a>
+                </div>
+                <span class="sidebar-badge admin">Admin</span>
+                <button class="sidebar-close-btn" aria-label="Close Sidebar"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="sidebar-menu-category">Main Menu</div>
+                <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+                <a href="admin-ai-tools.html"><i class="fas fa-robot"></i> AI Tools</a>
+                <a href="admin-projects.html"><i class="fas fa-folder"></i> Projects</a>
+                <a href="admin-analytics.html"><i class="fas fa-chart-line"></i> Analytics</a>
+
+                <div class="sidebar-menu-category">Communication</div>
+                <a href="admin-messages.html"><i class="fas fa-comments"></i> Messages</a>
+                <a href="admin-notifications.html" class="active"><i class="fas fa-bell"></i> Notifications</a>
+
+                <div class="sidebar-menu-category">Administration</div>
+                <a href="admin-profile.html"><i class="fas fa-user-shield"></i> Profile</a>
+                <a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a>
+
+                <a href="login.html" class="logout-btn logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                <a href="index.html" class="home-btn"><i class="fas fa-house"></i> Go to Home</a>
+            </div>
+        </aside>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- TOP HEADER BAR -->
+            <header class="dashboard-top-bar">
+                <div class="dash-header-left">
+                    <button class="sidebar-toggle-btn sidebar-toggle" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="dashboard.html" class="dash-header-logo"><img src="logo.webp" alt="Stackly AI"></a>
+                </div>
+
+                <div class="dash-header-center dash-welcome-text">
+                        <h1>Security & Alerts, <span class="dynamic-user-name">Admin</span> &#128075;</h1>
+                        <p>Real-time audit warnings, deployment milestones, and mission-critical telemetry logs</p>
+                    </div>
+
+                <div class="dash-header-right">
+                    <span class="dash-header-badge"><i class="fas fa-circle-exclamation"></i> 5 Active Alerts</span>
+                    <a href="admin-profile.html" class="dash-user-pill">
+                        <div class="user-avatar-initial">A</div>
+                        <div class="dash-user-meta">
+                            <h4 id="userNameHeader">Admin</h4>
+                            <p id="userRoleHeader">Super Administrator</p>
+                        </div>
+                    </a>
+                </div>
+            </header>
+
+            <!-- ACTION BAR -->
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:15px;">
+                <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                    <button class="dash-btn dash-btn-secondary dash-btn-sm" style="background:rgba(20,184,166,0.15);color:var(--secondary);border-color:var(--secondary);">All Alerts (12)</button>
+                    <button class="dash-btn dash-btn-secondary dash-btn-sm">Critical (2)</button>
+                    <button class="dash-btn dash-btn-secondary dash-btn-sm">Deployments (5)</button>
+                    <button class="dash-btn dash-btn-secondary dash-btn-sm">Security (3)</button>
+                </div>
+                <div style="display:flex;gap:10px;">
+                    <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">
+                        <i class="fas fa-check-double"></i> Mark All as Read
+                    </button>
+                    <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">
+                        <i class="fas fa-trash"></i> Clear Feed
+                    </button>
+                </div>
+            </div>
+
+            <!-- NOTIFICATIONS LIST -->
+            <div class="dash-card">
+                <div style="display:flex;flex-direction:column;gap:12px;">
+
+                    <!-- Notification 1 (Critical) -->
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:16px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.25);border-radius:14px;gap:16px;flex-wrap:wrap;">
+                        <div style="display:flex;gap:14px;align-items:flex-start;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(239,68,68,0.15);color:#ef4444;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">
+                                <i class="fas fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+                                    <h4 style="font-size:15px;margin:0;color:#fff;">High Memory Pressure Detected on eu-central-cluster-02</h4>
+                                    <span class="dash-badge danger">Critical</span>
+                                </div>
+                                <p style="font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.5;">
+                                    Tensor RAM utilization exceeded 89% during large batch fine-tuning of BioGenom. Cluster automated rebalancing initiated.
+                                </p>
+                                <small style="color:rgba(122,154,138,0.7);font-size:11.5px;">12 minutes ago Ã¢â‚¬Â¢ Automated Monitoring Daemon</small>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <button class="dash-btn dash-btn-primary dash-btn-sm" onclick="window.location.href='404.html';">Rebalance</button>
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">Dismiss</button>
+                        </div>
+                    </div>
+
+                    <!-- Notification 2 (Deployment) -->
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:16px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:14px;gap:16px;flex-wrap:wrap;">
+                        <div style="display:flex;gap:14px;align-items:flex-start;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(16,185,129,0.15);color:#10b981;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div>
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+                                    <h4 style="font-size:15px;margin:0;color:#fff;">Stackly-LLM-70B Deployed to Production</h4>
+                                    <span class="dash-badge success">Deployment</span>
+                                </div>
+                                <p style="font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.5;">
+                                    New neural checkpoint passed all 1,200 automated benchmark suites with 98.6% accuracy. Zero downtime cutover completed.
+                                </p>
+                                <small style="color:rgba(122,154,138,0.7);font-size:11.5px;">45 minutes ago Ã¢â‚¬Â¢ CI/CD Continuous Deployment</small>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <a href="404.html" class="dash-btn dash-btn-secondary dash-btn-sm">Inspect Model</a>
+                        </div>
+                    </div>
+
+                    <!-- Notification 3 (Security) -->
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:16px;background:rgba(6,182,212,0.06);border:1px solid rgba(6,182,212,0.2);border-radius:14px;gap:16px;flex-wrap:wrap;">
+                        <div style="display:flex;gap:14px;align-items:flex-start;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(6,182,212,0.15);color:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <div>
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+                                    <h4 style="font-size:15px;margin:0;color:#fff;">Master Admin API Token Auto-Refreshed</h4>
+                                    <span class="dash-badge info">Security</span>
+                                </div>
+                                <p style="font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.5;">
+                                    Routine 90-day cryptographic secret rotation executed according to ISO-27001 policy. All active sessions re-authenticated.
+                                </p>
+                                <small style="color:rgba(122,154,138,0.7);font-size:11.5px;">2 hours ago Ã¢â‚¬Â¢ Security Vault Service</small>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <a href="404.html" class="dash-btn dash-btn-secondary dash-btn-sm">Audit Log</a>
+                        </div>
+                    </div>
+
+                    <!-- Notification 4 (Billing / Enterprise) -->
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;padding:16px;background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.2);border-radius:14px;gap:16px;flex-wrap:wrap;">
+                        <div style="display:flex;gap:14px;align-items:flex-start;">
+                            <div style="width:40px;height:40px;border-radius:10px;background:rgba(168,85,247,0.15);color:#a855f7;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div>
+                                <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+                                    <h4 style="font-size:15px;margin:0;color:#fff;">Enterprise Invoice #INV-2026-889 Settled ($45,000)</h4>
+                                    <span class="dash-badge" style="background:rgba(168,85,247,0.15);color:#a855f7;border:1px solid rgba(168,85,247,0.3);">Finance</span>
+                                </div>
+                                <p style="font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.5;">
+                                    Payment processed successfully from AlphaCare Health Networks for annual dedicated GPU allocation.
+                                </p>
+                                <small style="color:rgba(122,154,138,0.7);font-size:11.5px;">5 hours ago Ã¢â‚¬Â¢ Stripe Enterprise Billing</small>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <button class="dash-btn dash-btn-secondary dash-btn-sm" onclick="window.location.href='404.html';">View Invoice</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ==========================
+            NEWSLETTER
+            ========================== -->
+            <section class="newsletter dashboard-newsletter">
+                <div class="container">
+                    <div class="newsletter-box">
+                        <h2>Subscribe For AI & Data Science Updates</h2>
+                        <p>Receive latest AI and data science trends, technology news and updates.</p>
+                        <form class="newsletter-form" novalidate>
+                            <div class="newsletter-input-wrap">
+                                <input type="email" placeholder="Enter Email Address" required>
+                                <button type="submit" class="btn-primary">Subscribe Now</button>
+                            </div>
+                            <span class="newsletter-error"></span>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <div class="dashboard-footer-bottom">
+                    <p>© 2026 Stackly. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <!-- GSAP & ScrollTrigger Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>
