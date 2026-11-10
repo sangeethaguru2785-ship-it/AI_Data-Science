@@ -117,13 +117,14 @@
                     </div>
                 </div>
 
-                <form class="auth-form" id="signupForm">
+                <form class="auth-form" id="signupForm" novalidate>
                     <input type="hidden" id="selectedRole" name="selectedRole" value="user">
 
                     <div class="auth-input-group">
                         <i class="fas fa-user input-icon"></i>
                         <input type="text" id="fullName" placeholder="Full Name" required autocomplete="name">
                     </div>
+                    <div id="fullNameError" class="auth-field-error"></div>
 
                     <div class="auth-input-group">
                         <i class="fas fa-envelope input-icon"></i>
@@ -133,8 +134,9 @@
 
                     <div class="auth-input-group">
                         <i class="fas fa-phone input-icon"></i>
-                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" required autocomplete="tel">
+                        <input type="tel" id="mobileNumber" placeholder="Mobile Number" required autocomplete="tel" maxlength="10" inputmode="numeric">
                     </div>
+                    <div id="mobileNumberError" class="auth-field-error"></div>
 
                     <div class="auth-input-group">
                         <i class="fas fa-lock input-icon"></i>
@@ -198,14 +200,27 @@
         const selectedRoleInput = document.getElementById('selectedRole');
         const submitBtnText = document.getElementById('submitBtnText');
         const signupForm = document.getElementById('signupForm');
+        const fullName = document.getElementById('fullName');
+        const fullNameError = document.getElementById('fullNameError');
         const signupEmail = document.getElementById('signupEmail');
         const signupEmailError = document.getElementById('signupEmailError');
+        const mobileNumber = document.getElementById('mobileNumber');
+        const mobileNumberError = document.getElementById('mobileNumberError');
         const signupPassword = document.getElementById('signupPassword');
         const signupPasswordError = document.getElementById('signupPasswordError');
         const confirmPassword = document.getElementById('confirmPassword');
         const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const termsCheck = document.getElementById('termsCheck');
         const toggleSignupPassword = document.getElementById('toggleSignupPassword');
         const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+
+        // Field restrictions & live clearing
+        if (window.setupNameInput) {
+            window.setupNameInput(fullName, fullNameError);
+        }
+        if (window.setupMobileInput) {
+            window.setupMobileInput(mobileNumber, mobileNumberError);
+        }
 
         // Clear errors on input
         if (signupEmail && signupEmailError) {
@@ -272,8 +287,22 @@
         // 3. Form Submission & Role-Based Redirection
         signupForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            e.stopImmediatePropagation();
 
-            // Strict Email Validation
+            // 1. Strict Name Validation
+            const nameValidation = window.validateStrictName ? window.validateStrictName(fullName.value) : { valid: true };
+            if (!nameValidation.valid) {
+                if (fullNameError) {
+                    fullNameError.textContent = nameValidation.message;
+                }
+                fullName.classList.add('input-error');
+                fullName.focus();
+                return;
+            }
+            if (fullNameError) fullNameError.textContent = '';
+            fullName.classList.remove('input-error');
+
+            // 2. Strict Email Validation
             const emailValidation = window.validateStrictEmail ? window.validateStrictEmail(signupEmail.value) : { valid: true };
             if (!emailValidation.valid) {
                 if (signupEmailError) {
@@ -286,7 +315,20 @@
             if (signupEmailError) signupEmailError.textContent = '';
             signupEmail.classList.remove('input-error');
 
-            // Strict Password Validation
+            // 3. Strict Mobile Number Validation
+            const mobileValidation = window.validateStrictMobile ? window.validateStrictMobile(mobileNumber.value, true) : { valid: true };
+            if (!mobileValidation.valid) {
+                if (mobileNumberError) {
+                    mobileNumberError.textContent = mobileValidation.message;
+                }
+                mobileNumber.classList.add('input-error');
+                mobileNumber.focus();
+                return;
+            }
+            if (mobileNumberError) mobileNumberError.textContent = '';
+            mobileNumber.classList.remove('input-error');
+
+            // 4. Strict Password Validation
             const passValidation = window.validateStrictPassword ? window.validateStrictPassword(signupPassword.value) : { valid: true };
             if (!passValidation.valid) {
                 if (signupPasswordError) {
@@ -299,6 +341,7 @@
             if (signupPasswordError) signupPasswordError.textContent = '';
             signupPassword.classList.remove('input-error');
 
+            // 5. Confirm Password Match
             if (signupPassword.value !== confirmPassword.value) {
                 if (confirmPasswordError) {
                     confirmPasswordError.textContent = 'Passwords do not match! Please verify your password.';
@@ -309,6 +352,13 @@
             }
             if (confirmPasswordError) confirmPasswordError.textContent = '';
             confirmPassword.classList.remove('input-error');
+
+            // 6. Terms & Conditions Check
+            if (termsCheck && !termsCheck.checked) {
+                alert('Please agree to the Terms & Conditions and Privacy Policy to create your account.');
+                termsCheck.focus();
+                return;
+            }
 
             const role = selectedRoleInput.value;
             const email = signupEmail.value.trim().toLowerCase();
@@ -322,7 +372,7 @@
                 alert('User Account Created Successfully! Redirecting to the User Dashboard...');
                 window.location.href = 'user.html';
             }
-        });
+        }, true);
     </script>
 </body>
 
