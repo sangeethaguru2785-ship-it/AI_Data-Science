@@ -1,0 +1,78 @@
+/* =====================================================
+   Stackly - Modern Animations & Smooth Scroll Styles
+   GPU-Accelerated Utilities & GSAP Enhancements
+===================================================== */
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* GPU Acceleration & Performance Optimizations */
+.hero,
+.page-hero,
+.section-title,
+.service-card,
+.price-card,
+.blog-card,
+.insight-card,
+.about-image,
+.about-content,
+.dash-stat-box,
+.dash-card,
+.btn-primary,
+.btn-outline {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Subtle Interactive Card Hover Polish */
+.service-card,
+.price-card,
+.blog-card,
+.insight-card,
+.contact-step-card,
+.channel-card,
+.techstack-card,
+.dash-stat-box {
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.35s ease !important;
+}
+
+/* Button Pulse / Glow on Focus & Hover */
+.btn-primary,
+.btn-outline,
+.auth-submit-btn {
+    transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* Floating Animation Keyframe Enhancement */
+@keyframes stacklyFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.floating-card {
+    animation: stacklyFloat 6s ease-in-out infinite;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .floating-card {
+        animation: none !important;
+    }
+}
